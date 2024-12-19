@@ -1,6 +1,8 @@
 package task;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,15 +17,13 @@ public class Demo_web_shop_task2 {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.navigate().to("https://demowebshop.tricentis.com/");
-		Thread.sleep(2000);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 		driver.findElement(By.xpath("//a[.='Log in']")).click();
-		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@id='Email']")).sendKeys("dummy53985738573@gmail.com");
 		driver.findElement(By.xpath("//input[@id='Password']")).sendKeys("Test@12345");
 		WebElement ele = driver.findElement(By.xpath("//input[@value='Log in']"));
 		ele.click();
-		Thread.sleep(2000);
 
 		// Navigate to the Apparel & Shoes category
 		driver.findElement(By.xpath("//ul[@class='top-menu']/li[4]/a")).click();
@@ -37,7 +37,6 @@ public class Demo_web_shop_task2 {
 			// Ensure we're on the Apparel & Shoes page
 			if (!driver.getCurrentUrl().contains("apparel-shoes")) {
 				driver.navigate().to("https://demowebshop.tricentis.com/apparel-shoes");
-				Thread.sleep(2000);
 			}
 
 			// Re-fetch the "Add to cart" elements list and click on the current item

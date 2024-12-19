@@ -26,6 +26,7 @@ public class Demo_webshop {
 		Thread.sleep(2000);
 		Driver.findElement(By.xpath("//ul[@class='top-menu']/li[4]/a")).click();
 		Driver.findElement(By.xpath("//a[contains(text(),'Rockabilly Polka Dot Top JR Plus Size')]/../../../div[2]/div[3]/div[2]/input")).click();
+		
 		try {
 			WebElement msg = Driver.findElement(By.xpath("//div[@class='bar-notification success']/p"));
 			boolean displayed1 = msg.isDisplayed();

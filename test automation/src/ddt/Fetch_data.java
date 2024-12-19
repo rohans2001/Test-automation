@@ -1,12 +1,12 @@
 package ddt;
 
-import generic.generic_fetch;
+import generic.Generic_ddt;
 
 public class Fetch_data {
 
 	public static void main(String[] args) {
 	
-		String value = generic_fetch.Fetch_data("Sheet1", 1, 0);
+		String value = Generic_ddt.Fetch_data("Sheet1", 1, 0);
 		System.out.println(value);
 	}
 

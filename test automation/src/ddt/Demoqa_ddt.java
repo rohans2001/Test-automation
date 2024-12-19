@@ -1,4 +1,4 @@
-package task;
+package ddt;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import generic.generic_fetch;
+import generic.Generic_ddt;
 
 public class Demoqa_ddt {
 
@@ -31,7 +31,7 @@ public class Demoqa_ddt {
 		for (int row=0;row<=11;row++) {
 			for (int i = 0; i < size; i++) {
 				WebElement webElement = test_elements.get(i);
-				String data = generic_fetch.Fetch_data("Test_demoqa", row, i);
+				String data = Generic_ddt.Fetch_data("Test_demoqa", row, i);
 				webElement.sendKeys(Keys.CONTROL + "a");
 				webElement.sendKeys(data);
 				Thread.sleep(1000);
@@ -39,7 +39,7 @@ public class Demoqa_ddt {
 				Thread.sleep(1000);
 			}
 
-			String gender = generic_fetch.Fetch_data("Test_demoqa", row, 9);
+			String gender = Generic_ddt.Fetch_data("Test_demoqa", row, 9);
 			if (gender.equals("Male")) {
 				Driver.findElement(By.xpath("//label[@for='gender-radio-1']")).click();
 			} else if (gender.equals("Female")) {
