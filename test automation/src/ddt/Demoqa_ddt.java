@@ -17,7 +17,7 @@ public class Demoqa_ddt {
 
 		System.setProperty("webdriver.chrome.driver", "./softwares/chromedriver.exe");
 
-		// open the browser and goto the website
+		// open the browser and goto the website.
 		WebDriver Driver = new ChromeDriver();
 		Driver.manage().window().maximize();
 		Driver.navigate().to("https://demoqa.com/automation-practice-form");
